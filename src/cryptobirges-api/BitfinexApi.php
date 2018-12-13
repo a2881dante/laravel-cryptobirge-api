@@ -16,7 +16,7 @@ class BitfinexApi implements CryptobirgeApi {
             $currencyUri = $crypto . $fiat;
             $fullUrl = $baseUrl . $currencyUri;
 
-            $response = file_get_contents_curl($fullUrl);
+            $response = CurlSetting::file_get_contents_curl($fullUrl);
             $object = json_decode($response);
 
             return $object->last_price;

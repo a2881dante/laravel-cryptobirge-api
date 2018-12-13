@@ -36,7 +36,7 @@ class Cryptobirge {
                 $result[$crypto][$fiat] = $sum / $count;
             }
 
-            $result[$crypto][Cryptobirge::UAH] = $result[$crypto][Cryptobirge::USD]
+            $result[$crypto][CryptobirgeApi::UAH] = $result[$crypto][CryptobirgeApi::USD]
                 * $pbApi->exchange('USD');
         }
 

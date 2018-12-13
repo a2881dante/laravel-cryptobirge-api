@@ -20,7 +20,7 @@ class KrakenApi implements CryptobirgeApi {
             $currencyUri = "?pair=" . $crypto . $fiat;
             $fullUrl = $baseUrl . $currencyUri;
 
-            $response = file_get_contents_curl($fullUrl);
+            $response = CurlSetting::file_get_contents_curl($fullUrl);
             $object = json_decode($response);
             $exchange = "X{$crypto}Z{$fiat}";
 

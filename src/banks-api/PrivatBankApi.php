@@ -17,7 +17,7 @@ class PrivatBankApi {
 
     function exchange($fiat) {
         $url = "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11";
-        $response = file_get_contents_curl($url);
+        $response = CurlSetting::file_get_contents_curl($url);
         $object = json_decode($response);
 
         for ($i = 0; $i < 4; $i++) {
