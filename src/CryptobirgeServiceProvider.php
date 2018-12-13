@@ -6,12 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use App;
 use Blade;
 
-/**
- * Created by PhpStorm.
- * User: a2881dante
- * Date: 12/13/18
- * Time: 8:10 AM
- */
 
 class CryptobirgeServiceProvider extends ServiceProvider{
 

@@ -9,13 +9,13 @@ namespace A2881dante\Cryptobirges;
  * Time: 08:49
  */
 
-class KrakenApi implements CryptocurrencyExchangeApi {
+class KrakenApi implements CryptobirgeApi {
 
     function getTicker($crypto, $fiat) {
-        if ($crypto == CryptocurrencyExchangeApi::BTC) {
+        if ($crypto == CryptobirgeApi::BTC) {
             $crypto = "XBT";
         }
-        if ($fiat != CryptocurrencyExchangeApi::UAH) {
+        if ($fiat != CryptobirgeApi::UAH) {
             $baseUrl = "https://api.kraken.com/0/public/Ticker";
             $currencyUri = "?pair=" . $crypto . $fiat;
             $fullUrl = $baseUrl . $currencyUri;
