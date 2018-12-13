@@ -1,0 +1,24 @@
+{
+    "name": "a2881dante/laravel-cryptobirge-api",
+    "description": "Package for using cryptobirge API.",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "widgets"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "a2881dante",
+            "email": "a2881dante.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "a2881dante\\Cryptobirges\\": "src"
+        }
+    }
+}
