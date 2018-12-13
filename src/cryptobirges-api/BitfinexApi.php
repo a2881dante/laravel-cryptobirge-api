@@ -19,7 +19,7 @@ class BitfinexApi implements CryptobirgeApi {
             $response = CurlSetting::file_get_contents_curl($fullUrl);
             $object = json_decode($response);
 
-            return $object->last_price;
+            return ($object!=null)?$object->last_price:0;
         } else {
             return null;
         }

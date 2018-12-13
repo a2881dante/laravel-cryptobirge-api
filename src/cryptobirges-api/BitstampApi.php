@@ -20,7 +20,7 @@ class BitstampApi implements CryptobirgeApi {
             $response = CurlSetting::file_get_contents_curl($fullUrl);
             $object = json_decode($response);
 
-            return $object->last;
+            return ($object!=null)?$object->last:0;
         } else {
             return null;
         }

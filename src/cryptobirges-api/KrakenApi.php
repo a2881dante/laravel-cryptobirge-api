@@ -24,7 +24,7 @@ class KrakenApi implements CryptobirgeApi {
             $object = json_decode($response);
             $exchange = "X{$crypto}Z{$fiat}";
 
-            return $object->result->$exchange->a[0];
+            return ($object!=null)?$object->result->$exchange->a[0]:0;
         }
     }
 

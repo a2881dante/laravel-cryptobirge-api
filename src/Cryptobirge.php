@@ -23,7 +23,8 @@ class Cryptobirge {
         $result = array();
 
         foreach ($cryptoCurrencies as $crypto) {
-            foreach ($fiatCurrencies as $fiat => $value) {
+            $result[$crypto] = [];
+            foreach ($fiatCurrencies as $fiat) {
                 $sum = 0;
                 $count = 0;
 
@@ -33,11 +34,12 @@ class Cryptobirge {
                     if ($response > 0) $count++;
                 }
 
-                $result[$crypto][$fiat] = $sum / $count;
+                $result[$crypto][$fiat] = ($count == 0)?0:$sum / $count;
             }
-
-            $result[$crypto][CryptobirgeApi::UAH] = $result[$crypto][CryptobirgeApi::USD]
-                * $pbApi->exchange('USD');
+            if(isset($result[$crypto][CryptobirgeApi::UAH]) AND isset($result[$crypto]["USD"])) {
+                $result[$crypto][CryptobirgeApi::UAH] = $result[$crypto]["USD"]
+                    * $pbApi->exchange('USD');
+            }
         }
 
         return $result;
